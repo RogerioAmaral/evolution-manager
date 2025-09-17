@@ -21,7 +21,7 @@ export default defineConfig(({ command, mode }) => {
         autoImport: true,
         styles: {
           configFile: 'src/styles/settings.scss',
-        },
+        }
       }),
       ViteFonts({
         google: {
@@ -53,5 +53,16 @@ export default defineConfig(({ command, mode }) => {
     server: {
       port: 3000,
     },
+    build: {
+      rollupOptions: {
+        external: [],
+        output: {
+          manualChunks: {
+            vuetify: ['vuetify'],
+            'vue-vuetify': ['vue', 'vue-router', 'pinia']
+          }
+        }
+      }
+    }
   }
 })

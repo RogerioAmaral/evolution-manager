@@ -16,7 +16,6 @@
 
 <script>
 import { VMarkdownView } from "vue3-markdown";
-import "vue3-markdown/dist/style.css";
 import { useDocStore } from "@/store/doc";
 import { useTheme } from "vuetify";
 
